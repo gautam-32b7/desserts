@@ -1,9 +1,10 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
+
 import CartItem from "./CartItem.jsx";
 import Modal from "./Modal.jsx";
 
 import formatPrice from "../utils/formatPrice.js";
-import { useState } from "react";
-import { createPortal } from "react-dom";
 
 export default function EmptyCart({ cart, onUpdateQuantity, onRemoveItem }) {
   const [open, setOpen] = useState(false);
