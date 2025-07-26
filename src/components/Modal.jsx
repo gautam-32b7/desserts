@@ -1,4 +1,4 @@
-import cakeImage from "../assets/order-confirm.png";
+import cakeImage from "../assets/cake_cup.png";
 
 export default function Modal() {
   return (
