@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { CartContext } from "./store/cart-context.js";
+
 import Dessert from "./components/Dessert.jsx";
 import EmptyCart from "./components/EmptyCart.jsx";
 import Cart from "./components/Cart.jsx";
@@ -99,20 +101,20 @@ export default function App() {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
+  // cart context values
+  const cartContext = {
+    cart,
+    handleAddToCart,
+    handleUpdateQuantity,
+    handleRemoveItem,
+  };
+
   return (
-    <>
+    <CartContext.Provider value={cartContext}>
       <div className="md:grid grid-cols-[7fr_3fr] items-start gap-10">
         <Dessert desserts={DESSERTS} onAddToCart={handleAddToCart} />
-        {cart.length === 0 ? (
-          <EmptyCart />
-        ) : (
-          <Cart
-            cart={cart}
-            onUpdateQuantity={handleUpdateQuantity}
-            onRemoveItem={handleRemoveItem}
-          />
-        )}
+        {cart.length === 0 ? <EmptyCart /> : <Cart />}
       </div>
-    </>
+    </CartContext.Provider>
   );
 }

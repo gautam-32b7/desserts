@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 
+import { useContext } from "react";
+import { CartContext } from "../store/cart-context.js";
+
 import CartItem from "./CartItem.jsx";
 import Modal from "./Modal.jsx";
 
 import formatPrice from "../utils/formatPrice.js";
 
-export default function EmptyCart({ cart, onUpdateQuantity, onRemoveItem }) {
+export default function Cart() {
   const [open, setOpen] = useState(false);
+  const { cart } = useContext(CartContext);
 
   const total = cart.reduce((acc, val) => acc + val.price * val.quantity, 0);
 
@@ -17,12 +21,7 @@ export default function EmptyCart({ cart, onUpdateQuantity, onRemoveItem }) {
         Your Cart ({cart.length})
       </h2>
       {cart.map((item) => (
-        <CartItem
-          key={item.id}
-          item={item}
-          onUpdateQuantity={onUpdateQuantity}
-          onRemoveItem={onRemoveItem}
-        />
+        <CartItem key={item.id} item={item} />
       ))}
       <div className="flex items-center justify-between mb-4">
         <p className="text-base">Order Total</p>

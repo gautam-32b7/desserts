@@ -1,8 +1,13 @@
+import { useContext } from "react";
+import { CartContext } from "../store/cart-context.js";
+
 import formatPrice from "../utils/formatPrice.js";
 
 import { ShoppingCart } from "lucide-react";
 
-export default function Card({ dessert, onAddToCart }) {
+export default function Card({ dessert }) {
+  const { handleAddToCart } = useContext(CartContext);
+
   return (
     <article className="bg-white rounded-lg overflow-hidden">
       <img src={dessert.image} alt={dessert.name} className="" />
@@ -14,7 +19,7 @@ export default function Card({ dessert, onAddToCart }) {
             {formatPrice(dessert.price)}
           </p>
           <button
-            onClick={() => onAddToCart(dessert)}
+            onClick={() => handleAddToCart(dessert)}
             className="flex items-center gap-2 p-2 bg-rose-500 text-rose-50 font-semibold rounded cursor-pointer hover:bg-rose-600"
           >
             <ShoppingCart size={20} />
