@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import cakeImage from "../assets/cake_cup.png";
 
 export default function Modal() {
-  // useEffect(() => {
-  //   const img = new Image();
-  //   img.src = cakeImage;
-  // }, []);
+  useEffect(() => {
+    const img = new Image();
+    img.src = cakeImage;
+  }, []);
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
