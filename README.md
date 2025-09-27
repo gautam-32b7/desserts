@@ -1,6 +1,6 @@
 ## Desserts 🍰
 
-A React.js application for browsing desserts with shopping cart functionalites.
+A React.js application for browsing desserts with shopping cart functionalities.
 
 ### 📷 Screenshots
 <table>
@@ -17,12 +17,15 @@ A React.js application for browsing desserts with shopping cart functionalites.
     </tr>
 </table>
 
+---
+
 ### ✨ Features
 - Browse dessert collection
 - Add items to cart
-- Increase / decrease quantity
+- Increase/decrease quantity
 - Remove items from cart
 - Real-time cart updates
+---
 
 ### 🛠️ Tech Stack
 - React.js
