@@ -79,7 +79,7 @@ export default function App() {
   // Get all desserts from backend
   async function fetchDesserts() {
     const res = await fetch(
-      "https://fastapi-image-upload-m1b1.onrender.com/desserts"
+      "https://fastapi-desserts-backend.vercel.app/desserts"
     );
     const data = await res.json();
     console.log(data);
