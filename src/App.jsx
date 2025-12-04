@@ -6,71 +6,71 @@ import Dessert from "./components/Dessert.jsx";
 import EmptyCart from "./components/EmptyCart.jsx";
 import Cart from "./components/Cart.jsx";
 
-const DESSERTS = [
-  {
-    id: crypto.randomUUID(),
-    image: "./images/waffle.jpg",
-    name: "Waffle with Berries",
-    description: "Crispy golden waffle topped with fresh mixed berries",
-    price: 362,
-  },
-  {
-    id: crypto.randomUUID(),
-    image: "./images/creme-brulee.jpg",
-    name: "Vanilla Creme Brulee",
-    description: "Creamy vanilla bean custard topped with burnt sugar",
-    price: 400,
-  },
-  {
-    id: crypto.randomUUID(),
-    image: "./images/macaron.jpg",
-    name: "Macaron Mix of Five",
-    description: "Selection of five colorful macarons with creamy fillings",
-    price: 492,
-  },
-  {
-    id: crypto.randomUUID(),
-    image: "./images/tiramisu.jpg",
-    name: "Classic Tiramisu",
-    description: "Classic Italian treat with coffee, mascarpone, and cocoa",
-    price: 275,
-  },
-  {
-    id: crypto.randomUUID(),
-    image: "./images/baklava.jpg",
-    name: "Pistachio Baklava",
-    description: "Flaky phyllo pastry layered with pistachios and honey syrup",
-    price: 146,
-  },
-  {
-    id: crypto.randomUUID(),
-    image: "./images/meringue.jpg",
-    name: "Lemon Meringue Pie",
-    description: "Classic American pie with bright lemon and airy meringue",
-    price: 232,
-  },
-  {
-    id: crypto.randomUUID(),
-    image: "./images/cake.jpg",
-    name: "Red Velvet Cake",
-    description: "Moist red velvet layers with cream cheese frosting",
-    price: 189,
-  },
-  {
-    id: crypto.randomUUID(),
-    image: "./images/brownie.jpg",
-    name: "Salted Caramel Brownie",
-    description: "Moist chocolate brownie with salted caramel glaze",
-    price: 189,
-  },
-  {
-    id: crypto.randomUUID(),
-    image: "./images/panna-cotta.jpg",
-    name: "Vanilla Panna Cotta",
-    description: "Creamy vanilla dessert with delicate texture",
-    price: 362,
-  },
-];
+// const DESSERTS = [
+//   {
+//     id: crypto.randomUUID(),
+//     image: "./images/waffle.jpg",
+//     name: "Waffle with Berries",
+//     description: "Crispy golden waffle topped with fresh mixed berries",
+//     price: 362,
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     image: "./images/creme-brulee.jpg",
+//     name: "Vanilla Creme Brulee",
+//     description: "Creamy vanilla bean custard topped with burnt sugar",
+//     price: 400,
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     image: "./images/macaron.jpg",
+//     name: "Macaron Mix of Five",
+//     description: "Selection of five colorful macarons with creamy fillings",
+//     price: 492,
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     image: "./images/tiramisu.jpg",
+//     name: "Classic Tiramisu",
+//     description: "Classic Italian treat with coffee, mascarpone, and cocoa",
+//     price: 275,
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     image: "./images/baklava.jpg",
+//     name: "Pistachio Baklava",
+//     description: "Flaky phyllo pastry layered with pistachios and honey syrup",
+//     price: 146,
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     image: "./images/meringue.jpg",
+//     name: "Lemon Meringue Pie",
+//     description: "Classic American pie with bright lemon and airy meringue",
+//     price: 232,
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     image: "./images/cake.jpg",
+//     name: "Red Velvet Cake",
+//     description: "Moist red velvet layers with cream cheese frosting",
+//     price: 189,
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     image: "./images/brownie.jpg",
+//     name: "Salted Caramel Brownie",
+//     description: "Moist chocolate brownie with salted caramel glaze",
+//     price: 189,
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     image: "./images/panna-cotta.jpg",
+//     name: "Vanilla Panna Cotta",
+//     description: "Creamy vanilla dessert with delicate texture",
+//     price: 362,
+//   },
+// ];
 
 export default function App() {
   const [desserts, setDesserts] = useState([]);
