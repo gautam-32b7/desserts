@@ -10,7 +10,7 @@ export default function Card({ dessert }) {
 
   return (
     <article className="bg-white rounded-lg overflow-hidden">
-      <img src={dessert.image} alt={dessert.name} className="" />
+      <img src={dessert.image_url} alt={dessert.name} className="" />
       <div className="p-4">
         <p className="text-base text-rose-950 font-bold mb-4">{dessert.name}</p>
         <p className="text-base text-rose-900 mb-4">{dessert.description}</p>

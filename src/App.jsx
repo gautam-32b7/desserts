@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { CartContext } from "./store/cart-context.js";
 
@@ -73,7 +73,22 @@ const DESSERTS = [
 ];
 
 export default function App() {
+  const [desserts, setDesserts] = useState([]);
   const [cart, setCart] = useState([]);
+
+  // Get all desserts from backend
+  async function fetchDesserts() {
+    const res = await fetch(
+      "https://fastapi-image-upload-m1b1.onrender.com/desserts"
+    );
+    const data = await res.json();
+    console.log(data);
+    setDesserts(data);
+  }
+
+  useEffect(() => {
+    fetchDesserts();
+  }, desserts);
 
   // add to cart
   const handleAddToCart = (dessert) => {
@@ -112,7 +127,7 @@ export default function App() {
   return (
     <CartContext.Provider value={cartContext}>
       <div className="md:grid grid-cols-[7fr_3fr] items-start gap-10">
-        <Dessert desserts={DESSERTS} onAddToCart={handleAddToCart} />
+        <Dessert desserts={desserts} onAddToCart={handleAddToCart} />
         {cart.length === 0 ? <EmptyCart /> : <Cart />}
       </div>
     </CartContext.Provider>

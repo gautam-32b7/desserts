@@ -13,7 +13,7 @@ export default function CartItem({ item }) {
       <div className="flex items-center gap-4 mb-4 rounded w-full p-2 bg-gray-50">
         <div className="flex-shrink-0">
           <img
-            src={item.image}
+            src={item.image_url}
             alt={item.name}
             className="h-16 w-16 object-cover rounded"
           />
