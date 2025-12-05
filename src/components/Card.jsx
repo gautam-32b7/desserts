@@ -10,9 +10,11 @@ export default function Card({ dessert }) {
 
   return (
     <article className="bg-white rounded-lg overflow-hidden">
-      <img src={dessert.image_url} alt={dessert.name} className="" />
+      <img src={dessert.image_url} alt={dessert.dessert_name} className="" />
       <div className="p-4">
-        <p className="text-base text-rose-950 font-bold mb-4">{dessert.name}</p>
+        <p className="text-base text-rose-950 font-bold mb-4">
+          {dessert.dessert_name}
+        </p>
         <p className="text-base text-rose-900 mb-4">{dessert.description}</p>
         <div className="flex items-center justify-between">
           <p className="text-lg text-rose-950 font-bold">

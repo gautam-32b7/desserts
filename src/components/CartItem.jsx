@@ -20,7 +20,7 @@ export default function CartItem({ item }) {
         </div>
         <div className="flex-1">
           <div className="flex items-center justify-between">
-            <span className="font-medium">{item.name}</span>
+            <span className="font-medium">{item.dessert_name}</span>
             <button
               onClick={() => handleRemoveItem(item.id)}
               className="p-2 flex-shrink-0 cursor-pointer"
