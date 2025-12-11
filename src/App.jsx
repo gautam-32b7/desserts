@@ -75,20 +75,26 @@ import Cart from "./components/Cart.jsx";
 export default function App() {
   const [desserts, setDesserts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // Get all desserts from backend
-  async function fetchDesserts() {
-    const res = await fetch(
-      "https://fastapi-desserts-backend.vercel.app/desserts"
-    );
-    const data = await res.json();
-    console.log(data);
-    setDesserts(data);
+  async function loadDesserts() {
+    setLoading(true);
+    try {
+      const res = await fetch("https://sweetify-backend.vercel.app/");
+      const data = await res.json();
+      console.log(data);
+      setDesserts(data);
+    } catch (error) {
+      console.log("Error:", error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
-    fetchDesserts();
-  }, desserts);
+    loadDesserts();
+  }, []);
 
   // add to cart
   const handleAddToCart = (dessert) => {
