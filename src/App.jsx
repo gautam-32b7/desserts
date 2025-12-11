@@ -5,6 +5,7 @@ import { CartContext } from "./store/cart-context.js";
 import Dessert from "./components/Dessert.jsx";
 import EmptyCart from "./components/EmptyCart.jsx";
 import Cart from "./components/Cart.jsx";
+import Spinner from "./components/Spinner.jsx";
 
 // const DESSERTS = [
 //   {
@@ -130,6 +131,9 @@ export default function App() {
     handleRemoveItem,
   };
 
+  if (loading) {
+    return <Spinner />;
+  }
   return (
     <CartContext.Provider value={cartContext}>
       <div className="md:grid grid-cols-[7fr_3fr] items-start gap-10">
